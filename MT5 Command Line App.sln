@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29905.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "MT5 Command Line App", "MT5 Command Line App.pyproj", "{F253B523-8173-42C0-9386-5A9C26C50F5A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F253B523-8173-42C0-9386-5A9C26C50F5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F253B523-8173-42C0-9386-5A9C26C50F5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FD5BA641-6D62-4C2A-80CE-1DF24B076872}
+	EndGlobalSection
+EndGlobal
