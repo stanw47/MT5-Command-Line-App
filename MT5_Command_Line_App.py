@@ -2,11 +2,35 @@ from datetime import datetime
 import MetaTrader5 as mt5
 import sys
 import time
+import socket, numpy as np
+from sklearn.linear_model import LinearRegression
 
 # Initializing MT5 connection 
 if not mt5.initialize():
     print("initialize() failed")
     mt5.shutdown()
+
+class socketserver:
+    def __init__(self, address = '', port = 9090):
+        self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.address = address
+        self.port = port
+        self.sock.bind((self.address, self.port))
+        self.cummdata = ''
+    def recvmsg(self) :
+        self.sock.listen(1)
+        self.conn, self.addr = self.sock.accept()
+        print('connected to', self.addr)
+        self.cummdata = ''
+        while True:
+            data = self.conn.recv(10000)
+            self.cummdata+=data.decode("utf-8")
+            if not data:
+                break
+            self.conn.send(bytes(calcregr(self.cummdata), "utf-8"))
+            return self.cummdata
+    def __del__(self):
+        self.sock.close()
 
 print(mt5.terminal_info())
 print(mt5.version())
